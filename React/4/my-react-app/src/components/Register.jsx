@@ -1,31 +1,39 @@
 import React, { useState, useContext } from 'react';
-import { AuthContext } from '../AuthContext';
-import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthContext'; // Importuojamas AuthContext, kad galėtume pasiekti autentifikavimo funkcijas
+import { Link, useNavigate } from 'react-router-dom'; // Naudosiu navigacija ir nuorodos į kitus puslapius
 
+// Komponentas, atsakingas už vartotojo registraciją
 const Register = () => {
+  // Paimame `signUp` funkciją iš AuthContext, kad galėtume užregistruoti vartotoją
   const { signUp } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Naudojama navigacijai į kitus puslapius
 
+  // Būsena, sauganti registracijos duomenis
   const [registrationData, setRegistrationData] = useState({ username: '', password: '' });
+  
+  // Būsena klaidų ir sėkmingos registracijos žinutėms
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
+  // Funkcija, kuri apdoroja įvestų duomenų pasikeitimus formoje
   const handleChange = (e) => {
     setRegistrationData({ ...registrationData, [e.target.name]: e.target.value });
   };
 
+  // Funkcija, kuri valdys registracijos formos pateikimą
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    setSuccess('');
+    e.preventDefault(); // Neleidžia formos pateikimui sukelti puslapio perkrovimo
+    setError(''); // Išvalome klaidos žinutę prieš bandant registruotis
+    setSuccess(''); // Išvalome ankstesnę sėkmingos registracijos žinutę
     try {
+      // Bandome užregistruoti vartotoją su pateiktais duomenimis
       await signUp(registrationData);
-      setSuccess('Registracija sėkminga! Dabar galite prisijungti.');
+      setSuccess('Registracija sėkminga! Dabar galite prisijungti.'); // Jei registracija sėkminga, nustatome sėkmingą žinutę
       setTimeout(() => {
-        navigate('/login');
+        navigate('/login'); // Po 2 sekundžių nukreipiame vartotoją į prisijungimo puslapį
       }, 2000);
     } catch (err) {
-      setError('Registracijos klaida');
+      setError('Registracijos klaida'); // Jei klaida, rodome klaidos žinutę
     }
   };
 
@@ -39,8 +47,8 @@ const Register = () => {
             name="username" 
             placeholder="Vartotojo vardas" 
             value={registrationData.username} 
-            onChange={handleChange}
-            required
+            onChange={handleChange} // Atnaujina vartotojo vardą
+            required // Reikalingas laukelis
           />
         </div>
         <div>
@@ -49,15 +57,15 @@ const Register = () => {
             name="password" 
             placeholder="Slaptažodis" 
             value={registrationData.password} 
-            onChange={handleChange}
-            required
+            onChange={handleChange} // Atnaujina slaptažodį
+            required // Reikalingas laukelis
           />
         </div>
-        {error && <p className="error">{error}</p>}
-        {success && <p className="success">{success}</p>}
-        <button type="submit">Registruotis</button>
+        {error && <p className="error">{error}</p>} {/* Rodoma klaidos žinutė, jei yra klaida */}
+        {success && <p className="success">{success}</p>} {/* Rodoma sėkminga registracijos žinutė, jei registracija sėkminga */}
+        <button type="submit">Registruotis</button> {/* Mygtukas formos pateikimui */}
       </form>
-      <p>Jau turite paskyrą? <Link to="/login">Prisijungti</Link></p>
+      <p>Jau turite paskyrą? <Link to="/login">Prisijungti</Link></p> {/* Nuoroda į prisijungimo puslapį */}
     </div>
   );
 };

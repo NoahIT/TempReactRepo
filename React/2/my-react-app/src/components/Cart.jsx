@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Komponentas, atsakingas už pirkinių krepšelio rodymą
 const Cart = ({ cart, removeFromCart }) => {
   return (
     <div className="cart">
@@ -11,8 +12,10 @@ const Cart = ({ cart, removeFromCart }) => {
           {cart.map(item => (
             <li key={item.id} className="cart-item">
               <span>
+                {/*Rodo prekės pavadinimą ir kiekį*/}
                 {item.name} (Kiekis: {item.quantity})
               </span>
+              {/*Mygtukas prekei pašalinti iš krepšelio*/}
               <button onClick={() => removeFromCart(item.id)}>Pašalinti iš krepšelio</button>
             </li>
           ))}

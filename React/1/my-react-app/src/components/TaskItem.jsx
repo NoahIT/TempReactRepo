@@ -1,5 +1,7 @@
 import React from 'react';
 
+// Funkcinis komponentas TaskItem, kuris 
+// priima props: task - užduotis, onToggle - būsena keisti, onDelete - užduočiai ištrinti
 const TaskItem = ({ task, onToggle, onDelete }) => {
   return (
     <li>

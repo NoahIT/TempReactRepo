@@ -1,0 +1,328 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input {
+  @apply w-full border px-3 py-2 rounded;
+}
+
+.btn {
+  @apply bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700;
+}
+
+.btn-sm {
+  @apply bg-gray-200 px-2 py-1 rounded hover:bg-gray-300;
+} */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Global Styles (Equivalent of Tailwind Base) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: inherit;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  padding-left: 20px;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}
+
+/* TailwindCSS classes converted to regular CSS */
+
+/* .px-3 (Padding on left and right) */
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+/* .py-2 (Padding on top and bottom) */
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* .bg-blue-500 (Background color) */
+.bg-blue-500 {
+  background-color: #3b82f6; /* Equivalent of Tailwind's bg-blue-500 */
+}
+
+/* .text-white (Text color) */
+.text-white {
+  color: #ffffff;
+}
+
+/* .rounded (Border radius) */
+.rounded {
+  border-radius: 0.375rem;
+}
+
+/* .hover\:bg-blue-700 (Hover effect for background color) */
+.hover\:bg-blue-700:hover {
+  background-color: #1d4ed8; /* Equivalent of Tailwind's bg-blue-700 on hover */
+}
+
+/* .flex (Flexbox display) */
+.flex {
+  display: flex;
+}
+
+/* .justify-center (Center alignment of items in flexbox) */
+.justify-center {
+  justify-content: center;
+}
+
+/* .items-center (Center items vertically in flexbox) */
+.items-center {
+  align-items: center;
+}
+
+/* .space-x-4 (Horizontal space between flex items) */
+.space-x-4 > *:not(:last-child) {
+  margin-right: 1rem;
+}
+
+/* .text-lg (Large text size) */
+.text-lg {
+  font-size: 1.125rem;
+}
+
+/* .font-bold (Bold text) */
+.font-bold {
+  font-weight: 700;
+}
+
+/* .text-center (Text alignment center) */
+.text-center {
+  text-align: center;
+}
+
+/* .cursor-pointer (Pointer cursor for clickable elements) */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* .w-full (Full width) */
+.w-full {
+  width: 100%;
+}
+
+/* .h-10 (Fixed height) */
+.h-10 {
+  height: 2.5rem;
+}
+
+/* .mt-4 (Margin-top) */
+.mt-4 {
+  margin-top: 1rem;
+}
+
+/* .mb-4 (Margin-bottom) */
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+/* .text-sm (Small text) */
+.text-sm {
+  font-size: 0.875rem;
+}
+
+/* .bg-gray-100 (Light gray background) */
+.bg-gray-100 {
+  background-color: #f3f4f6; /* Equivalent of Tailwind's bg-gray-100 */
+}
+
+/* .text-gray-700 (Dark gray text color) */
+.text-gray-700 {
+  color: #374151; /* Equivalent of Tailwind's text-gray-700 */
+}
+
+/* .border (Border styling) */
+.border {
+  border-width: 1px;
+  border-color: #e5e7eb; /* Equivalent of Tailwind's border color */
+}
+
+/* .border-gray-300 (Gray border) */
+.border-gray-300 {
+  border-color: #d1d5db; /* Equivalent of Tailwind's border-gray-300 */
+}
+
+/* .p-4 (Padding all around) */
+.p-4 {
+  padding: 1rem;
+}
+
+/* .shadow-md (Medium box shadow) */
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* .max-w-xs (Maximum width) */
+.max-w-xs {
+  max-width: 20rem;
+}
+
+/* .mx-auto (Horizontal margin auto for centering) */
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .text-xl (Extra large text) */
+.text-xl {
+  font-size: 1.25rem;
+}
+
+/* .font-medium (Medium font weight) */
+.font-medium {
+  font-weight: 500;
+}
+
+/* .italic (Italic text style) */
+.italic {
+  font-style: italic;
+}
+
+/* .underline (Underline text) */
+.underline {
+  text-decoration: underline;
+}
+
+/* .transition (Transition effect for hover) */
+.transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* .opacity-75 (Opacity) */
+.opacity-75 {
+  opacity: 0.75;
+}
+
+/* .overflow-hidden (Prevent overflowing content) */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* .relative (Position relative) */
+.relative {
+  position: relative;
+}
+
+/* .absolute (Position absolute) */
+.absolute {
+  position: absolute;
+}
+
+/* .top-0 (Top position) */
+.top-0 {
+  top: 0;
+}
+
+/* .left-0 (Left position) */
+.left-0 {
+  left: 0;
+}
+
+/* .right-0 (Right position) */
+.right-0 {
+  right: 0;
+}
+
+/* .bottom-0 (Bottom position) */
+.bottom-0 {
+  bottom: 0;
+}
+
+/* Add any additional custom classes here... */
